@@ -8,11 +8,11 @@
 import Foundation
 
 class EmployeeNetWorkManager {
-    static let sharedEmployeeManager = EmployeeNetWorkManager()
+    static let sharedNetworKManager = EmployeeNetWorkManager()
     private init(){
         
     }
-    func getDataFromServer(with url:URL,completion:@escaping(Result<Data,Error>) -> Void) {
+    func fetchNetworkData(from url:URL,completion:@escaping(Result<Data,Error>) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("\(error.localizedDescription)")
